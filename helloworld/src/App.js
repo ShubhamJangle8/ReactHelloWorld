@@ -16,7 +16,7 @@ class App extends Component{
   }
   onNameChange = (event) => {
     console.log('value is : ' + event.target.value)
-    const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z]{2,}$');
+    const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z ]{2,}$');
     if(nameRegex.test(event.target.value)){
       this.setState({
         userName: event.target.value,
@@ -32,11 +32,12 @@ class App extends Component{
   render(){
     return (
       <>
+        <h1>BridgeLabz is cool</h1>
         <div>
         <header className="App-header">
-          <h1>
+          <h2>
             Hello {this.state.userName} from Bridgelabz!
-          </h1>
+          </h2>
           <img src={logo} onClick={this.onClick} alt='Brigelabz logo'></img>
         </header>
         </div>
@@ -44,6 +45,14 @@ class App extends Component{
           <input onClick={this.onNameChange} className='inputElement'></input>
           <span className='error-output'>{this.state.nameerror}</span>
         </div>
+        <p>At BridgeLabz, we're are a techie community of</p>
+        <ul>
+          <li>technologists</li>
+          <li>builders</li>
+          <li>thinkers</li>
+        </ul>
+        <p>Explanation of BridgeLabz</p>
+        <p>To know about us, visit <a href="https://www.bridgelabz.com">BridgeLabz</a> to learn more about our mission <strong>Employability to all</strong></p>
       </>
     );
   }
